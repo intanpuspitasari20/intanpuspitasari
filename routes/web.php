@@ -17,15 +17,11 @@ use App\Http\Controllers\Main;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 
 });
-Route::get('biodata', function(){
-    return view('biodata');
+Route::post('/biodata', [Biodata::class, "formulir"]);
+Route::get('/form', function(){
+    return view('form');
 });
-Route::get('home',function(){
-    return view('home');
-});
-Route::get('main', function(){
-    return view('main');
-});
+
